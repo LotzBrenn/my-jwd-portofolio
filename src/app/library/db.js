@@ -1,19 +1,15 @@
-// src/lib/db.js (atau src/app/library/db.js)
-import 'server-only';
 import mysql from 'mysql2/promise';
 
-const globalForDb = global;
-
-export const db =
-  globalForDb.db ||
-  mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: '', // Sesuaikan password MySQL kamu
-    database: 'jwd_batik',
-    waitForConnections: true,
-    connectionLimit: 10,
-    queueLimit: 0,
-  });
-
-if (process.env.NODE_ENV !== 'production') globalForDb.db = db;
+export const db = mysql.createPool({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: Number(process.env.DB_PORT) || 19494,
+  ssl: {
+    rejectUnauthorized: false, // Wajib diaktifkan untuk Aiven MySQL
+  },
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0,
+});
