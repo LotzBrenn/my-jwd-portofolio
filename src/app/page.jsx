@@ -9,11 +9,11 @@ export default function ProfilePage() {
       <Navbar />
 
       {/* SECTION 1: PROFILE / HERO */}
-      <section id="profile" className="min-h-screen bg-[#141414] pt-24 pb-12 px-6 md:px-12 lg:px-16 flex items-center justify-center overflow-hidden">
-        <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center justify-between relative">
+      <section id="profile" className="min-h-screen bg-[#141414] pt-24 pb-12 px-6 md:px-16 flex items-center justify-center overflow-hidden">
+        <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           
-          {/* Indikator Titik & Label Kiri */}
-          <div className="hidden md:flex flex-col items-center gap-4 z-20 pr-4">
+          {/* Indikator Titik & Label Kiri (Sejajar sempurna dengan AIR_DEV) */}
+          <div className="hidden md:flex md:col-span-1 flex-col items-center gap-4 z-20">
             <span className="text-[#D9A441] text-xs font-mono font-bold tracking-widest uppercase mb-1">
               Profile_
             </span>
@@ -23,11 +23,11 @@ export default function ProfilePage() {
             <div className="w-4 h-4 bg-white rounded-full"></div>
           </div>
 
-          {/* Area Utama: Foto Offset + Teks Overlap Besar */}
-          <div className="flex-1 flex flex-col md:flex-row items-center justify-center md:pl-6 w-full">
+          {/* Area Utama: Foto Offset + Teks Overlap */}
+          <div className="md:col-span-11 flex flex-col md:flex-row items-center justify-center w-full">
             
             {/* Container Frame Foto (Papan Kuning + Foto Geser) */}
-            <div className="relative w-[280px] h-[350px] sm:w-[340px] sm:h-[420px] md:w-[380px] md:h-[470px] lg:w-[440px] lg:h-[530px] shrink-0">
+            <div className="relative w-[280px] h-[350px] sm:w-[320px] sm:h-[400px] md:w-[350px] md:h-[440px] lg:w-[400px] lg:h-[490px] shrink-0">
               
               {/* Landasan Kuning (Pojok Atas-Kanan) */}
               <div className="absolute top-0 right-0 w-[85%] h-[85%] bg-[#D9A441] z-0"></div>
@@ -45,13 +45,13 @@ export default function ProfilePage() {
 
             </div>
 
-            {/* Teks Nama & Profesi (Skala Besar + Menimpa Foto) */}
-            <div className="relative z-20 mt-8 md:mt-0 md:-ml-28 lg:-ml-40 text-center md:text-left pointer-events-none select-none">
+            {/* Teks Nama & Profesi */}
+            <div className="relative z-20 mt-8 md:mt-0 md:-ml-20 lg:-ml-32 text-center md:text-left pointer-events-none select-none">
               <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-white leading-[0.92]">
                 AF'WAN IKHO<br />
                 RAHMADHANI
               </h1>
-              <p className="text-base sm:text-xl md:text-2xl font-light text-slate-300 tracking-wide pt-4 md:pt-6 font-mono">
+              <p className="text-base sm:text-xl md:text-2xl font-light text-white tracking-wide pt-4 md:pt-6 font-mono text-align-right md:text-right">
                 Junior Web Developer
               </p>
             </div>
@@ -65,11 +65,8 @@ export default function ProfilePage() {
       <section id="about" className="min-h-screen bg-[#2A2A2A] py-20 px-6 md:px-16 flex items-center">
         <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           
-          {/* Indikator Titik Kiri */}
-          <div className="hidden md:flex flex-col items-center gap-4 z-20 pr-4">
-            <span className="text-[#D9A441] text-xs font-mono font-bold tracking-widest uppercase mb-1">
-              About_
-            </span>
+          <div className="hidden md:flex md:col-span-1 flex-col items-center gap-3">
+            <span className="text-[#D9A441] text-xs font-mono mb-2">About_</span>
             <div className="w-4 h-4 bg-white rounded-full"></div>
             <div className="w-4 h-8 bg-[#D9A441] rounded-full"></div>
             <div className="w-4 h-4 bg-white rounded-full"></div>
@@ -98,9 +95,8 @@ export default function ProfilePage() {
       <section id="skills" className="min-h-screen bg-[#141414] py-20 px-6 md:px-16 flex items-center">
         <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           
-          <div className="hidden md:flex flex-col items-center gap-4 z-20 pr-4">
-            <span className="text-[#D9A441] text-xs font-mono font-bold tracking-widest uppercase mb-1">
-              Skills_</span>
+          <div className="hidden md:flex md:col-span-1 flex-col items-center gap-3">
+            <span className="text-[#D9A441] text-xs font-mono mb-2">Skills_</span>
             <div className="w-4 h-4 bg-white rounded-full"></div>
             <div className="w-4 h-4 bg-white rounded-full"></div>
             <div className="w-4 h-8 bg-[#D9A441] rounded-full"></div>
@@ -116,19 +112,18 @@ export default function ProfilePage() {
               <div className="space-y-3">
                 <h3 className="text-lg font-bold text-white mb-4 border-b border-white/10 pb-2">Front End</h3>
                 <ul className="space-y-2 text-slate-300 text-sm">
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#D9A441] rounded-full"></span> HTML</li>
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#D9A441] rounded-full"></span> HTML5</li>
                   <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#D9A441] rounded-full"></span> CSS</li>
                   <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#D9A441] rounded-full"></span> Bootstrap</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#D9A441] rounded-full"></span> JS</li>
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#D9A441] rounded-full"></span> Tailwind CSS</li>
                 </ul>
               </div>
 
               <div className="space-y-3">
                 <h3 className="text-lg font-bold text-white mb-4 border-b border-white/10 pb-2">Backend</h3>
                 <ul className="space-y-2 text-slate-300 text-sm">
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#D9A441] rounded-full"></span> PHP</li>
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#D9A441] rounded-full"></span> JavaScript</li>
                   <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#D9A441] rounded-full"></span> MySQL</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#D9A441] rounded-full"></span> PostgreSQL</li>
                 </ul>
               </div>
 
@@ -138,6 +133,7 @@ export default function ProfilePage() {
                   <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#D9A441] rounded-full"></span> VSCode</li>
                   <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#D9A441] rounded-full"></span> GitHub</li>
                   <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#D9A441] rounded-full"></span> Laragon</li>
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#D9A441] rounded-full"></span> TablePlus</li>
                 </ul>
               </div>
             </div>
@@ -150,9 +146,8 @@ export default function ProfilePage() {
       <section id="project" className="min-h-screen bg-[#2A2A2A] py-20 px-6 md:px-16 flex items-center">
         <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           
-          <div className="hidden md:flex flex-col items-center gap-4 z-20 pr-4">
-            <span className="text-[#D9A441] text-xs font-mono font-bold tracking-widest uppercase mb-1">
-              Project_</span>
+          <div className="hidden md:flex md:col-span-1 flex-col items-center gap-3">
+            <span className="text-[#D9A441] text-xs font-mono mb-2">Project_</span>
             <div className="w-4 h-4 bg-white rounded-full"></div>
             <div className="w-4 h-4 bg-white rounded-full"></div>
             <div className="w-4 h-4 bg-white rounded-full"></div>
