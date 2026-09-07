@@ -20,7 +20,6 @@ export default function DetailProdukPage({ params }) {
   const [orderData, setOrderData] = useState(null);
 
   useEffect(() => {
-    // Ambil data produk berdasarkan ID
     async function fetchProduct() {
       try {
         const res = await fetch(`/api/products/${productId}`);
@@ -63,18 +62,18 @@ export default function DetailProdukPage({ params }) {
     }
   };
 
-  if (loading) return <div className="min-h-screen bg-slate-950 text-white p-10 text-center">Memuat produk...</div>;
-  if (!product) return <div className="min-h-screen bg-slate-950 text-white p-10 text-center">Produk tidak ditemukan.</div>;
+  if (loading) return <div className="min-h-screen bg-zinc-950 text-white p-10 text-center">Memuat produk...</div>;
+  if (!product) return <div className="min-h-screen bg-zinc-950 text-white p-10 text-center">Produk tidak ditemukan.</div>;
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white py-10 px-4 md:px-8">
+    <div className="min-h-screen bg-zinc-950 text-white py-10 px-4 md:px-8">
       <div className="max-w-4xl mx-auto">
-        <Link href="/usaha" className="text-amber-400 text-sm hover:underline mb-6 inline-block">
+        <Link href="/usaha" className="text-amber-400 text-sm hover:underline mb-6 inline-block font-medium">
           ← Kembali ke Katalog
         </Link>
 
         {!orderData ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-slate-900/80 p-6 md:p-8 rounded-3xl border border-white/10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-zinc-900 p-6 md:p-8 rounded-3xl border border-white/10 shadow-2xl">
             {/* Detail Produk */}
             <div>
               <img src={product.image} alt={product.name} className="w-full h-72 object-cover rounded-2xl mb-4" />
@@ -82,52 +81,52 @@ export default function DetailProdukPage({ params }) {
                 {product.category}
               </span>
               <h1 className="text-2xl font-bold text-white mt-3">{product.name}</h1>
-              <p className="text-slate-400 text-sm mt-2">{product.description}</p>
+              <p className="text-zinc-400 text-sm mt-2">{product.description}</p>
               <p className="text-2xl font-extrabold text-amber-400 mt-4">
                 Rp {product.price.toLocaleString('id-ID')}
               </p>
             </div>
 
             {/* Form Pemesanan */}
-            <div className="bg-slate-950 p-6 rounded-2xl border border-white/10">
+            <div className="bg-zinc-950/80 p-6 rounded-2xl border border-white/10">
               <h2 className="text-xl font-bold text-amber-400 mb-4">Form Pemesanan Custom</h2>
               <form onSubmit={handleSubmit} className="space-y-4 text-sm">
                 <div>
-                  <label className="block text-xs uppercase text-slate-400 font-bold mb-1">Nama Lengkap *</label>
+                  <label className="block text-xs uppercase text-zinc-400 font-bold mb-1">Nama Lengkap *</label>
                   <input
                     type="text"
                     required
                     placeholder="Budi Santoso"
                     value={customerName}
                     onChange={(e) => setCustomerName(e.target.value)}
-                    className="w-full bg-slate-900 border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-amber-400"
+                    className="w-full bg-zinc-900 border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-amber-400"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase text-slate-400 font-bold mb-1">Nomor HP / WhatsApp *</label>
+                  <label className="block text-xs uppercase text-zinc-400 font-bold mb-1">Nomor HP / WhatsApp *</label>
                   <input
                     type="tel"
                     required
                     placeholder="081234567890"
                     value={customerPhone}
                     onChange={(e) => setCustomerPhone(e.target.value)}
-                    className="w-full bg-slate-900 border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-amber-400"
+                    className="w-full bg-zinc-900 border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-amber-400"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase text-slate-400 font-bold mb-2">Ukuran</label>
+                  <label className="block text-xs uppercase text-zinc-400 font-bold mb-2">Ukuran</label>
                   <div className="flex gap-2">
                     {['S', 'M', 'L', 'XL', 'XXL'].map((sz) => (
                       <button
                         key={sz}
                         type="button"
                         onClick={() => setSelectedSize(sz)}
-                        className={`w-10 h-10 rounded-xl text-sm font-bold border ${
+                        className={`w-10 h-10 rounded-xl text-sm font-bold border transition ${
                           selectedSize === sz
-                            ? 'bg-amber-500 text-slate-950 border-amber-400'
-                            : 'bg-slate-900 text-white border-white/10 hover:bg-slate-800'
+                            ? 'bg-amber-500 text-zinc-950 border-amber-400'
+                            : 'bg-zinc-900 text-white border-white/10 hover:bg-zinc-800'
                         }`}
                       >
                         {sz}
@@ -137,20 +136,20 @@ export default function DetailProdukPage({ params }) {
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase text-slate-400 font-bold mb-1">Catatan Kustom (Opsional)</label>
+                  <label className="block text-xs uppercase text-zinc-400 font-bold mb-1">Catatan Kustom (Opsional)</label>
                   <textarea
                     rows="2"
                     placeholder="Request ukuran/furing tambahan..."
                     value={customerNote}
                     onChange={(e) => setCustomerNote(e.target.value)}
-                    className="w-full bg-slate-900 border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-amber-400"
+                    className="w-full bg-zinc-900 border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-amber-400"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-xl transition shadow-lg disabled:opacity-50"
+                  className="w-full py-3.5 bg-amber-500 hover:bg-amber-400 text-zinc-950 font-bold rounded-xl transition shadow-lg disabled:opacity-50"
                 >
                   {isSubmitting ? 'Memproses...' : 'Buat Pesanan Baru'}
                 </button>
@@ -159,14 +158,14 @@ export default function DetailProdukPage({ params }) {
           </div>
         ) : (
           /* Struk / Confirmation View */
-          <div className="bg-slate-900 border border-white/10 rounded-3xl p-8 max-w-xl mx-auto text-center space-y-4">
+          <div className="bg-zinc-900 border border-white/10 rounded-3xl p-8 max-w-xl mx-auto text-center space-y-4">
             <div className="w-12 h-12 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto text-2xl font-bold">
               ✓
             </div>
             <h2 className="text-2xl font-bold text-white">Pesanan Berhasil Dibuat</h2>
             <p className="text-amber-400 font-mono font-bold">ID Transaksi: {orderData.orderId}</p>
 
-            <div className="bg-slate-950 p-4 rounded-2xl border border-white/5 text-left text-sm space-y-2 text-slate-300">
+            <div className="bg-zinc-950 p-4 rounded-2xl border border-white/5 text-left text-sm space-y-2 text-zinc-300">
               <p><strong className="text-white">Pelanggan:</strong> {orderData.customerName} ({orderData.customerPhone})</p>
               <p><strong className="text-white">Produk:</strong> {orderData.productName} (Ukuran: {orderData.size})</p>
               <p><strong className="text-white">Catatan:</strong> {orderData.note}</p>
@@ -184,7 +183,7 @@ export default function DetailProdukPage({ params }) {
               </a>
               <button
                 onClick={() => setOrderData(null)}
-                className="py-3 px-6 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-sm font-semibold"
+                className="py-3 px-6 bg-zinc-800 hover:bg-zinc-700 text-white rounded-xl text-sm font-semibold"
               >
                 Pesan Lagi
               </button>

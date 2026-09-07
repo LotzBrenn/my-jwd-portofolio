@@ -16,23 +16,23 @@ export default async function AdminDashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white py-10 px-4 md:px-8">
+    <div className="min-h-screen bg-zinc-950 text-white py-10 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="flex justify-between items-center mb-8">
           <div>
             <h1 className="text-2xl font-bold text-amber-400">Dashboard CRM Admin</h1>
             <p className="text-slate-400 text-sm">Data Pesanan Real-time dari Database MySQL</p>
           </div>
-          <Link href="/usaha" className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-amber-400 rounded-xl text-sm font-semibold border border-white/10">
+          <Link href="/usaha" className="px-4 py-2 bg-zinc-800 hover:bg-slate-700 text-amber-400 rounded-xl text-sm font-semibold border border-white/10">
             ← Kembali ke Toko
           </Link>
         </div>
 
         {/* Tabel Pesanan */}
-        <div className="bg-slate-900 rounded-2xl overflow-hidden border border-white/10">
+        <div className="bg-zinc-900 rounded-2xl overflow-hidden border border-white/10">
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-sm text-slate-300">
-              <thead className="bg-slate-950 text-amber-400 text-xs uppercase border-b border-white/10">
+            <table className="w-full text-left text-sm text-zinc-300">
+              <thead className="bg-zinc-950 text-amber-400 text-xs uppercase border-b border-white/10">
                 <tr>
                   <th className="p-4">ID Transaksi</th>
                   <th className="p-4">Pelanggan</th>
