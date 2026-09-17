@@ -39,6 +39,7 @@ export default function ProfilePage() {
             <a href="#about" className="hover:text-[#D9A441] transition">Tentang</a>
             <a href="#pendidikan" className="hover:text-[#D9A441] transition">Pendidikan</a>
             <a href="#pengalaman" className="hover:text-[#D9A441] transition">Pengalaman</a>
+            <a href="#karya" className="hover:text-[#D9A441] transition">Karya</a>
             <a href="#skills" className="hover:text-[#D9A441] transition">Keahlian</a>
             <a href="#sertifikasi" className="hover:text-[#D9A441] transition">Sertifikasi</a>
             <a href="#kegiatan" className="hover:text-[#D9A441] transition">Kegiatan</a>
@@ -185,8 +186,104 @@ export default function ProfilePage() {
         </div>
       </section>
 
+      {/* SECTION KARYA / PORTFOLIO */}
+      <section id="karya" className="py-20 px-6 md:px-16 bg-[#141414] border-t border-white/5">
+        <div className="max-w-6xl mx-auto space-y-8">
+          <div>
+            <span className="text-[#D9A441] text-xs font-mono uppercase tracking-widest block mb-2">Portfolio & Proyek Unggulan_</span>
+            <h2 className="text-3xl md:text-5xl font-black text-white">Karya</h2>
+          </div>
+
+          {/* Card Griya Batik */}
+          <div className="bg-[#2A2A2A] rounded-2xl overflow-hidden border border-white/10 grid grid-cols-1 lg:grid-cols-5 gap-0">
+            {/* Image Section */}
+            <div className="relative h-64 lg:h-auto lg:col-span-2 bg-gradient-to-br from-[#D9A441]/20 to-[#141414]">
+              <div className="absolute inset-0 flex items-center justify-center p-8">
+                <div className="text-center space-y-4">
+                  <div className="w-24 h-24 mx-auto rounded-full bg-[#D9A441]/10 border-4 border-[#D9A441] flex items-center justify-center">
+                    <span className="text-4xl">🛍️</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">Griya Batik</h3>
+                  <p className="text-xs text-[#D9A441] font-mono">E-Commerce Platform</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Content Section */}
+            <div className="lg:col-span-3 p-8 space-y-4">
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-bold rounded-full border border-blue-500/30">
+                  Next.js
+                </span>
+                <span className="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-bold rounded-full border border-emerald-500/30">
+                  MySQL
+                </span>
+                <span className="px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-bold rounded-full border border-purple-500/30">
+                  Tailwind CSS
+                </span>
+                <span className="px-3 py-1 bg-orange-500/20 text-orange-400 text-xs font-bold rounded-full border border-orange-500/30">
+                  Railway
+                </span>
+              </div>
+
+              <h4 className="text-xl md:text-2xl font-bold text-white">Toko Online Kain Batik Tradisional</h4>
+
+              <div className="space-y-3 text-sm text-slate-300 leading-relaxed">
+                <p>
+                  <strong className="text-[#D9A441]">Griya Batik</strong> adalah platform e-commerce yang menjual kain batik tradisional berkualitas tinggi dengan berbagai motif khas Nusantara. Platform ini memungkinkan pelanggan untuk memesan kain batik dengan <strong>ukuran custom sesuai kebutuhan</strong>, mulai dari pesanan retail hingga grosir untuk keperluan bisnis fashion, konveksi, atau acara formal.
+                </p>
+                <p>
+                  Setiap produk dilengkapi dengan <strong>deskripsi detail motif, asal daerah, filosofi batik, dan panduan perawatan</strong> untuk menjaga kualitas kain. Sistem keranjang belanja terintegrasi dengan manajemen stok real-time dan dashboard admin untuk pengelolaan produk, pesanan, dan laporan penjualan.
+                </p>
+              </div>
+
+              <div className="pt-4 border-t border-white/10">
+                <h5 className="text-xs font-bold text-[#D9A441] uppercase tracking-wide mb-3">Fitur Utama:</h5>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300">
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#D9A441] mt-0.5">▸</span>
+                    <span>Katalog produk dengan filter motif & harga</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#D9A441] mt-0.5">▸</span>
+                    <span>Pemesanan ukuran kustom (meter)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#D9A441] mt-0.5">▸</span>
+                    <span>Pencarian & detail produk interaktif</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#D9A441] mt-0.5">▸</span>
+                    <span>Admin dashboard lengkap</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#D9A441] mt-0.5">▸</span>
+                    <span>Database cloud (MySQL Aiven)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#D9A441] mt-0.5">▸</span>
+                    <span>Deploy otomatis via Railway</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="flex flex-wrap gap-3 pt-4">
+                <a
+                  href="https://tokobatik-project-production-3f24.up.railway.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#D9A441] text-[#141414] font-bold text-sm rounded-xl hover:bg-amber-400 transition shadow-lg hover:shadow-[#D9A441]/20"
+                >
+                  🌐 Kunjungi Toko Online
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* REVISI 2: KEAHLIAN (JAVASCRIPT DI BACKEND) */}
-      <section id="skills" className="py-20 px-6 md:px-16 bg-[#141414] border-t border-white/5">
+      <section id="skills" className="py-20 px-6 md:px-16 bg-[#2A2A2A] border-t border-white/5">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-black text-[#D9A441] mb-10">Keahlian & Technical Stack</h2>
 
