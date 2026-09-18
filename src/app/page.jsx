@@ -173,14 +173,7 @@ export default function ProfilePage() {
               <p className="text-xs text-slate-300 leading-relaxed">
                 Membangun platform toko online karya tangan terpisah yang terintegrasi dengan database cloud, memiliki fitur pencarian, detail produk, serta admin dashboard.
               </p>
-              <a
-                href={URL_WEB_TOKO}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block pt-2 text-xs font-bold text-[#D9A441] hover:underline"
-              >
-                Lihat Aplikasi Toko →
-              </a>
+              
             </div>
           </div>
         </div>
